@@ -7,8 +7,6 @@
 3. Axel Adrial Paza Kalembang (2306161984)
 4. Jeremy Wijanarko Mulyono (2306267132)
 
-# **DATA ENCRYPTION STANDARD**
-
 ---
 
 ## **1. Background**
@@ -71,7 +69,7 @@ Algoritma DES bekerja dalam langkah-langkah berikut:
 ---
 
 **Tools yang Digunakan**:  
-- **Visual Studio Code**: Coding VHDL  
+- **Visual Studio Code**: Coding untuk VHDL  
 - **ModelSim**: Simulasi desain  
 - **Quartus**: Sintesis perangkat keras  
 - **GitHub**: Version control  
