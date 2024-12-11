@@ -22,7 +22,6 @@ type key_array is array(0 to 55) of integer range 0 to 63;
 		 13,5,60,52,44,36,28,
 		 20,12,4,27,19,11,3);
 
-
 	begin
 
 	process(key) is

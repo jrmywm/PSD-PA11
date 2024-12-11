@@ -14,10 +14,8 @@ process (input) is
 
 	begin
 	
-		for i in 0 to 26 loop
-		
-		output(i)<=input(i+1);
-		
+		for i in 0 to 26 loop	
+		output(i)<=input(i+1);	
 		end loop;
 		output(27)<= input(0);
 		

@@ -1,38 +1,36 @@
 library ieee;
-
 use ieee.std_logic_1164.all;
 
-entity permutation_prog is
-port(	input: in std_logic_vector(0 to 31);
-	output: out std_logic_vector(0 to 31));
-end permutation_prog;
+entity permutation_step is
+port(
+    input: in std_logic_vector(0 to 31);
+    output: out std_logic_vector(0 to 31)
+);
+end permutation_step;
 
+architecture behavior of permutation_step is
 
-architecture behavior of permutation_prog is
+    -- Define the permutation array as a constant array
+    type ip_array is array(0 to 31) of integer range 1 to 32;
+    constant ip: ip_array := (
+        16, 7, 20, 21,
+        29, 12, 28, 17,
+        1, 15, 23, 26,
+        5, 18, 31, 10,
+        2, 8, 24, 14,
+        32, 27, 3, 9,
+        19, 13, 30, 6,
+        22, 11, 4, 25
+    );
 
-	type ip_array is array(0 to 31) of integer range 0 to 31;
-   constant ip: ip_array :=
-		(15, 6, 19, 20,
-		 28, 11, 27, 16,
-		 0, 14, 22, 25,
-		 4, 17, 30, 9,
-		 1, 7, 23, 13,
-		 31, 26, 2, 8,
-		 18, 12, 29, 5,
-		 21, 10, 3, 24);
-	
-	begin
-	
-	process(input) is
-	
-	begin
-	
-		for i in 0 to 31 loop
-	
-			output(i)<=input(ip(i));
-		
-		end loop;
-	
-	end process;
-	
+begin
+
+    process(input) is
+    begin
+        -- Apply permutation
+        for i in 0 to 31 loop
+            output(i) <= input(ip(i) - 1); -- Adjust for 0-based indexing
+        end loop;
+    end process;
+
 end behavior;
