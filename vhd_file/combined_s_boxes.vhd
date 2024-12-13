@@ -43,7 +43,6 @@ architecture behavior of combined_s_boxes is
         (3, 15, 0, 6, 10, 1, 13, 8, 9, 4, 5, 11, 12, 7, 2, 14)
     );
 
-    -- Repeat for s_box_5, s_box_6, s_box_7, s_box_8
     constant s_box_5: s_box_array := (
         (2, 12, 4, 1, 7, 10, 11, 6, 8, 5, 3, 15, 13, 0, 14, 9),
         (14, 11, 2, 12, 4, 7, 13, 1, 5, 0, 15, 10, 3, 9, 8, 6),

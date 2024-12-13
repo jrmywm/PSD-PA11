@@ -1,14 +1,14 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity encryption_tb is
+entity decryption_tb is
 -- Testbench has no ports
-end encryption_tb;
+end decryption_tb;
 
-architecture behavior of encryption_tb is
+architecture behavior of decryption_tb is
 
     -- Component Declaration for the Unit Under Test (UUT)
-    component encryption
+    component decryption
         port (
             input  : in  std_logic_vector(0 to 63);
             key    : in  std_logic_vector(0 to 63);
@@ -23,13 +23,10 @@ architecture behavior of encryption_tb is
     signal output_signal : std_logic_vector(0 to 63);
     signal done_signal   : std_logic;
 
-    -- Clock period definition
-    constant clk_period : time := 10 ns;
-
 begin
 
     -- Instantiate the Unit Under Test (UUT)
-    uut: encryption
+    uut: decryption
         port map (
             input  => input_signal,
             key    => key_signal,
@@ -41,14 +38,14 @@ begin
     stim_proc: process
     begin
         -- Initialize inputs
-        input_signal <= x"0123456789ABCDEF"; -- Example plaintext
+        input_signal <= x"85E813540F0AB405"; -- Example ciphertext
         key_signal <= x"133457799BBCDFF1";  -- Example key
 
-        -- Wait for encryption to complete
+        -- Wait for decryption to complete
         wait until done_signal = '1';
 
         -- Check the output
-        wait for clk_period * 10; -- Allow some time for observation
+        wait for 20 ns; -- Allow some time for observation
 
         -- End simulation
         wait;

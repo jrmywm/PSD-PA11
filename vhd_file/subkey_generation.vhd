@@ -2,11 +2,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity subkey_generation is
-    generic(
-        shifting_parameter: in std_logic_vector(0 to 1); -- Determines the number of shifts (01 for 1-bit, 10 for 2-bit)
-        left_or_right: in std_logic_vector(0 to 0)       -- Direction of shift (0 for left, 1 for right)
-    );
+
     port(
+        shifting_parameter: in std_logic_vector(0 to 1); -- Determines the number of shifts (01 for 1-bit, 10 for 2-bit)
+        left_or_right: in std_logic_vector(0 to 0);       -- Direction of shift (0 for left, 1 for right)
         left_key_in: in std_logic_vector(0 to 27);       -- Input left key half (28 bits)
         right_key_in: in std_logic_vector(0 to 27);      -- Input right key half (28 bits)
         subkey: out std_logic_vector(0 to 47);           -- Output subkey (48 bits)
